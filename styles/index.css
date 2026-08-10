@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Signature element: a faceted "cut diamond" divider used sparingly between
+   sections. It is drawn with clip-path so it reads as a cut gem edge rather
+   than a generic gradient blob. */
+.facet-divider {
+  position: relative;
+  height: 42px;
+  width: 100%;
+  overflow: hidden;
+}
+.facet-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, #C9A24B 45%, transparent 55%, transparent);
+  clip-path: polygon(0 100%, 8% 0, 16% 100%, 24% 0, 32% 100%, 40% 0, 48% 100%, 56% 0, 64% 100%, 72% 0, 80% 100%, 88% 0, 96% 100%, 100% 0, 100% 100%);
+  opacity: 0.55;
+}
+
+.gold-outline {
+  border: 1px solid #C9A24B;
+}
+
+/* keyboard focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #E4C976;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
